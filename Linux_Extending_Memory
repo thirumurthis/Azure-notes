@@ -1,0 +1,38 @@
+https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/
+
+$ lsblk 
+ command will provide the details of the disk mounted.
+ 
+$ fdisk /dev/sda
+  is an interactive command line tool to resize the partition.
+  issue p  - to print the partition start index of sector and end index of sector.
+  issue dX - d for delete and X -number of partition that needs to be deleted and resized.
+   -> since X is used, the default prompt will be X (next step)
+   
+  issue n - to create the partition
+  issue X - which number of partition to create, if 1 is already present then enter 2 or next available partition. in our case we need to 
+  resize 2 so use 2
+ 
+ $ will issue a p (for primary or extended partition)
+  
+  need to provide the start index (from the P command note the partition 1's end index (we need to provide the +1 of it) 
+  check the default  value
+  
+  end index will be index value (sector) or size (input +30G) for 30 gb size depends on avilable free space.
+  issue w - to write the change
+  
+  $ reboot the vm
+   ================================ >
+  in bastion server use 
+  
+  In CentOS/RHEL 7.x the command is “sudo xfs_growfs -d /dev/sdaX”. This may take some time to complete.
+  
+  Remote the VM and check the disk propertied usign disk utils.
+  
+  
+  Other reference
+  
+  'https://serverfault.com/questions/861517/centos-7-extend-partition-with-unallocated-space'
+  https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux
+  https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/
+  https://thewiringcloset.wordpress.com/2013/01/09/extending-a-root-filesystem-in-linux-without-lvm/
