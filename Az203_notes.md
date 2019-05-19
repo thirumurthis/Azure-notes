@@ -13,3 +13,22 @@ Lab:
 
        Use Managed Disk: (property) Azure Managed Disks simplifies disk management for Azure IaaS VMs by managing the storage accounts associated with the VM disks. You only have to specify the type (Premium or Standard) and the size of disk you need, and Azure creates and manages the disk for you.
 
+
+Create VM option:
+
+       <Network section> : Verify that the Public IP address field has a status that begins with (new)
+        Note: Use a public IP address if you want to communicate with the virtual machine from outside the virtual network. For example, if you will need to RDP to the VM, you will need a public IP address.
+        
+                NIC Network security group: (Advanced option)
+                  Note: A Network Security Group is a set of firewall rules that control traffic to and from your virtual machine.
+       
+                Accelerated Network :  Accelerated networking Enables low latency and high throughput on the network interface.
+        
+       <Management section> :
+       Boot diagnosis:  
+        Note: Azure Monitor enables you to consume telemetry to gain visibility into the performance and health of your workloads on Azure. The most important type of Azure telemetry data is the metrics (also called performance counters) emitted by most Azure resources.
+        
+       <Tag section> : 
+       After you apply tags, you can retrieve all the resources in your subscription with that tag name and value. Tags enable you to retrieve related resources from different resource groups. This approach is helpful when you need to organize resources for billing or management.
+       
+       
