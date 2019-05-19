@@ -10,5 +10,6 @@ Lab:
        Fault Domain: Virtual machines in the same Fault domain share a common power source and physical network switch.
    
        Update Domain: Virtual machines in the same Update Domain will be restarted together during planned maintenance. Azure never restarts more than one Update Domain at a time.
-'
+
+       Use Managed Disk: (property) Azure Managed Disks simplifies disk management for Azure IaaS VMs by managing the storage accounts associated with the VM disks. You only have to specify the type (Premium or Standard) and the size of disk you need, and Azure creates and manages the disk for you.
 
