@@ -1,6 +1,6 @@
 
 1. Creating a VM
-2. Encrypting a VM (Bootlocker - Windows; DM - Locker - Linux)
+2. Encrypting a VM (Bootlocker - Windows; DM-Crypt - Linux)
 Lab:
 3. Virtual Network creation, (range of IP Address, fire wall, etc).
 4. Availablility set creation - Logical group of VMs, incase of failures.
