@@ -34,13 +34,13 @@ Create VM option:
 
 Demo:
 
-1. create a Key Vault, 
-2. Add the key to the keyvault, called KEK (Key encryption key)
-3. Enable the Access policy in the key vault advanced option (list below, and save it)
+a. create a Key Vault, 
+b. Add the key to the keyvault, called KEK (Key encryption key)
+c. Enable the Access policy in the key vault advanced option (list below, and save it)
       Enable Acess to Azure Disk Encryption for volume encryption.
       Enable access to Azure Resource Manager for template deployment. 
       Enable access to Azure Virtual Machines for deployment.
-4. Create a VM, in this case use a windows VM.
+d. Create a VM, in this case use a windows VM.
 
 ```
 $keyVaultName = "<keyvalut name>"
@@ -61,7 +61,7 @@ Set-AzVMDiskEncryptionExtension -ResourceGroupName $rgName `
 -KeyEncryptionKeyVaultId $keyVaultResourceId
 ```
 
-  5. Creating Recovery Services vault.
+ 5. Creating Recovery Services vault.
        -> All service -> recovery -> provide name, resource group
        -> attach to the VM, but clicking the VM -> operations -> backup select the created recovery
   
