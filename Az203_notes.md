@@ -31,4 +31,28 @@ Create VM option:
        <Tag section> : 
        After you apply tags, you can retrieve all the resources in your subscription with that tag name and value. Tags enable you to retrieve related resources from different resource groups. This approach is helpful when you need to organize resources for billing or management.
        
-       
+
+Demo:
+
+1. create a Key Vault, 
+2. Add the key to the keyvault, called KEK (Key encryption key)
+3. Enable the Access policy in the key vault advanced option (list below, and save it)
+      Enable Acess to Azure Disk Encryption for volume encryption.
+      Enable access to Azure Resource Manager for template deployment. 
+      Enable access to Azure Virtual Machines for deployment.
+4. Create a VM, in this case use a windows VM.
+
+$keyVaultName = "<keyvalut name>"
+$rgName = "<resource group name>"
+$vmName = "<vmname>"
+$keyVault = Get-AzKeyVault -VaultName $keyVaultName -ResourceGroupName $rgName;
+$diskEncryptionKeyVaultUrl = $keyVault.VaultUri;
+$keyVaultResourceId = $keyVault.ResourceId;
+$keyEncryptionKeyUrl = (Get-AzKeyVaultKey -VaultName $keyVaultName -Name aztimkeyEK01).Key.kid;
+
+Set-AzVMDiskEncryptionExtension -ResourceGroupName $rgName `
+-VMName $vmName `
+-DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl `
+-DiskEncryptionKeyVaultId $keyVaultResourceId `
+-KeyEncryptionKeyUrl $keyEncryptionKeyUrl `
+-KeyEncryptionKeyVaultId $keyVaultResourceId
