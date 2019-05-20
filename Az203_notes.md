@@ -42,6 +42,7 @@ Demo:
       Enable access to Azure Virtual Machines for deployment.
 4. Create a VM, in this case use a windows VM.
 
+```
 $keyVaultName = "<keyvalut name>"
 $rgName = "<resource group name>"
 $vmName = "<vmname>"
@@ -49,10 +50,18 @@ $keyVault = Get-AzKeyVault -VaultName $keyVaultName -ResourceGroupName $rgName;
 $diskEncryptionKeyVaultUrl = $keyVault.VaultUri;
 $keyVaultResourceId = $keyVault.ResourceId;
 $keyEncryptionKeyUrl = (Get-AzKeyVaultKey -VaultName $keyVaultName -Name aztimkeyEK01).Key.kid;
+```
 
+```
 Set-AzVMDiskEncryptionExtension -ResourceGroupName $rgName `
 -VMName $vmName `
 -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl `
 -DiskEncryptionKeyVaultId $keyVaultResourceId `
 -KeyEncryptionKeyUrl $keyEncryptionKeyUrl `
 -KeyEncryptionKeyVaultId $keyVaultResourceId
+```
+
+  5. Creating Recovery Services vault.
+       -> All service -> recovery -> provide name, resource group
+       -> attach to the VM, but clicking the VM -> operations -> backup select the created recovery
+  
