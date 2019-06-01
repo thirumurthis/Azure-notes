@@ -71,9 +71,16 @@ Key terminology:
  - resource group - container for a set of resources
  - resources  - all the service is resource, eg. VM, etc.
  - resource provider ( subscription -> resource provider) eg: Microsoft.Batch, Microsoft.Compute, Microsoft.Storage, etc.
+         - there are default providers already registered, for new use portal/ power shell/ CLI to register.
          - resource type, API version
  - Resource Management template - JSON 
  - declartive syntax - syntax in the json file instead of a programming script.
+ 
+ Using Power Shell to view the resources provider
+  ```
+    >  Get-AzResourceProvider -ListAvailable | Select-Object ProviderNamespace , RegistrationState
+  ```
+  Note: use documentation to refer for resource type.
  
  Advantage of using Resource manager:
      - repeatedly deploy solution such a way resource deployed in consistent state.
