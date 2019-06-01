@@ -66,9 +66,10 @@ Set-AzVMDiskEncryptionExtension -ResourceGroupName $rgName `
        -> attach to the VM, but clicking the VM -> operations -> backup select the created recovery
   
 
-
- - resource group
- - resources
+Azure Resource Management template:
+Key terminology:
+ - resource group - container for a set of resources
+ - resources  - all the service is resource, eg. VM, etc.
  - resource provider ( subscription -> resource provider) eg: Microsoft.Batch, etc
          - resource type, API version
          
