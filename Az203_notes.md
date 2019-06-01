@@ -70,6 +70,8 @@ Azure Resource Management template:
 Key terminology:
  - resource group - container for a set of resources
  - resources  - all the service is resource, eg. VM, etc.
- - resource provider ( subscription -> resource provider) eg: Microsoft.Batch, etc
+ - resource provider ( subscription -> resource provider) eg: Microsoft.Batch, Microsoft.Compute, Microsoft.Storage, etc.
          - resource type, API version
+ - Resource Management template - JSON 
+ - declartive syntax - syntax in the json file instead of a programming script.
          
