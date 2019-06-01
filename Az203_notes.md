@@ -65,3 +65,10 @@ Set-AzVMDiskEncryptionExtension -ResourceGroupName $rgName `
        -> All service -> recovery -> provide name, resource group
        -> attach to the VM, but clicking the VM -> operations -> backup select the created recovery
   
+
+
+ - resource group
+ - resources
+ - resource provider ( subscription -> resource provider) eg: Microsoft.Batch, etc
+         - resource type, API version
+         
