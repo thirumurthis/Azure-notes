@@ -80,4 +80,11 @@ Key terminology:
      - define dependency between resources, so deployed in correct order
      - apply access control to all services in resource group, since ROLE BASED ACCESS CONTROL (RBAC) is natively integrated with management platform.
      - apply tags to resources
-         
+        
+SCOPE:
+    - Management groups
+    - subscriptions
+    - resource groups
+    - resources
+    
+    
