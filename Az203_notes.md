@@ -74,4 +74,10 @@ Key terminology:
          - resource type, API version
  - Resource Management template - JSON 
  - declartive syntax - syntax in the json file instead of a programming script.
+ 
+ Advantage of using Resource manager:
+     - repeatedly deploy solution such a way resource deployed in consistent state.
+     - define dependency between resources, so deployed in correct order
+     - apply access control to all services in resource group, since ROLE BASED ACCESS CONTROL (RBAC) is natively integrated with management platform.
+     - apply tags to resources
          
